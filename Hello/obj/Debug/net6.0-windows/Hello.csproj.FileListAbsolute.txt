@@ -1,0 +1,17 @@
+D:\Meus Projetos\CSharp-Experiements\Hello\bin\Debug\net6.0-windows\Hello.exe
+D:\Meus Projetos\CSharp-Experiements\Hello\bin\Debug\net6.0-windows\Hello.deps.json
+D:\Meus Projetos\CSharp-Experiements\Hello\bin\Debug\net6.0-windows\Hello.runtimeconfig.json
+D:\Meus Projetos\CSharp-Experiements\Hello\bin\Debug\net6.0-windows\Hello.dll
+D:\Meus Projetos\CSharp-Experiements\Hello\bin\Debug\net6.0-windows\Hello.pdb
+D:\Meus Projetos\CSharp-Experiements\Hello\obj\Debug\net6.0-windows\Hello.csproj.AssemblyReference.cache
+D:\Meus Projetos\CSharp-Experiements\Hello\obj\Debug\net6.0-windows\Hello.Form1.resources
+D:\Meus Projetos\CSharp-Experiements\Hello\obj\Debug\net6.0-windows\Hello.csproj.GenerateResource.cache
+D:\Meus Projetos\CSharp-Experiements\Hello\obj\Debug\net6.0-windows\Hello.GeneratedMSBuildEditorConfig.editorconfig
+D:\Meus Projetos\CSharp-Experiements\Hello\obj\Debug\net6.0-windows\Hello.AssemblyInfoInputs.cache
+D:\Meus Projetos\CSharp-Experiements\Hello\obj\Debug\net6.0-windows\Hello.AssemblyInfo.cs
+D:\Meus Projetos\CSharp-Experiements\Hello\obj\Debug\net6.0-windows\Hello.csproj.CoreCompileInputs.cache
+D:\Meus Projetos\CSharp-Experiements\Hello\obj\Debug\net6.0-windows\Hello.dll
+D:\Meus Projetos\CSharp-Experiements\Hello\obj\Debug\net6.0-windows\refint\Hello.dll
+D:\Meus Projetos\CSharp-Experiements\Hello\obj\Debug\net6.0-windows\Hello.pdb
+D:\Meus Projetos\CSharp-Experiements\Hello\obj\Debug\net6.0-windows\Hello.genruntimeconfig.cache
+D:\Meus Projetos\CSharp-Experiements\Hello\obj\Debug\net6.0-windows\ref\Hello.dll
