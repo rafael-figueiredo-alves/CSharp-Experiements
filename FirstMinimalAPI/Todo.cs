@@ -1,0 +1,1 @@
+public record Todo (Guid id, string title, bool done);
