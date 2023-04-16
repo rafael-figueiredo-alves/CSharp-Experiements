@@ -2,8 +2,12 @@
 
 <PageTitle>MyBlazorFirstApp</PageTitle>
 
-<h1>Olá, mundo!</h1>
+<h1>Olá, @nome !</h1>
 
 Sejam bem vindos ao meu primeiro App em Blazor.
 
-<SurveyPrompt Title="How is Blazor working for you?" />
+<SurveyPrompt Title="Como está sendo sua experiência com o Blazor?" />
+
+@code{
+	string nome = "Rafael";
+}

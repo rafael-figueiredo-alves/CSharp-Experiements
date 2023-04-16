@@ -4,15 +4,12 @@
 
 <h1>Vamos Contar? Contando ... </h1>
 
-<p role="status">Current count: @currentCount</p>
+<p role="status">Contador atual: @currentCount</p>
 
 <button class="btn btn-primary" @onclick="IncrementCount">Clique aqui</button>
 
 @code {
     private int currentCount = 0;
 
-    private void IncrementCount()
-    {
-        currentCount++;
-    }
+    private void IncrementCount() => currentCount += 10;
 }
