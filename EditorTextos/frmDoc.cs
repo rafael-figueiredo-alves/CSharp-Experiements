@@ -10,17 +10,11 @@ using System.Windows.Forms;
 
 namespace EditorTextos
 {
-	public partial class frmDoc : Form
+	public partial class FrmDoc : Form
 	{
-		public bool Modificado { get; set; } = false;
-		public frmDoc()
+		public FrmDoc()
 		{
 			InitializeComponent();
-		}
-
-		private void timerControles_Tick(object sender, EventArgs e)
-		{
-			Modificado = true;
 		}
 	}
 }

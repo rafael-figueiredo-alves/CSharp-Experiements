@@ -10,6 +10,18 @@ namespace EditorTextos
 			InitializeComponent();
 		}
 
+		private RichTextBox? DocWindow()
+		{
+			if (ActiveMdiChild is FrmDoc Docs)
+			{
+				return Docs.DocContent;
+			}
+			else
+			{
+				return null;
+			}
+		}
+
 		private void CxPesquisa_Enter(object sender, EventArgs e)
 		{
 			if (cxPesquisa.Text == "Pesquisar...")
@@ -26,7 +38,7 @@ namespace EditorTextos
 			}
 		}
 
-		private void menuSobre_Click(object sender, EventArgs e)
+		private void MenuSobre_Click(object sender, EventArgs e)
 		{
 			FrmAbout formAbout = new();
 			_ = formAbout.ShowDialog();
@@ -37,9 +49,9 @@ namespace EditorTextos
 			Application.Exit();
 		}
 
-		private void novoToolStripMenuItem_Click(object sender, EventArgs e)
+		private void NovoToolStripMenuItem_Click(object sender, EventArgs e)
 		{
-			frmDoc Documento = new()
+			FrmDoc Documento = new()
 			{
 				MdiParent = this,
 				Text = "Sem Título " + Docs.ToString()
@@ -48,26 +60,28 @@ namespace EditorTextos
 			Docs++;
 		}
 
-		private void timerControles_Tick(object sender, EventArgs e)
+		private void TimerControles_Tick(object sender, EventArgs e)
 		{
-			if (this?.ActiveMdiChild != null)
+			if (DocWindow() != null)
 			{
-				frmDoc? Docs = this.ActiveMdiChild as frmDoc;
-
-				if (Docs != null)
-				{
-					BtnSalvar.Enabled = Docs.Modificado;
-				}
-				else
-				{
-					BtnSalvar.Enabled = false;
-				}
+				BtnSalvar.Enabled = DocWindow()!.Modified;
+				BtnImprimir.Enabled = true;
+				BtnCopiar.Enabled = true;
+				BtnCortar.Enabled = true;
+				BtnColar.Enabled = true;
+				BtnDesfazer.Enabled = DocWindow()!.CanUndo;
+				BtnRefazer.Enabled = DocWindow()!.CanRedo;
 			}
 			else
 			{
 				BtnSalvar.Enabled = false;
+				BtnImprimir.Enabled = false;
+				BtnCopiar.Enabled = false;
+				BtnCortar.Enabled = false;
+				BtnColar.Enabled = false;
+				BtnDesfazer.Enabled = false;
+				BtnRefazer.Enabled = false;
 			}
-
 		}
 	}
 }

@@ -1,6 +1,6 @@
 ﻿namespace EditorTextos
 {
-	partial class frmDoc
+	partial class FrmDoc
 	{
 		/// <summary>
 		/// Required designer variable.
@@ -29,7 +29,6 @@
 		private void InitializeComponent()
 		{
 			DocContent = new RichTextBox();
-			SuspendLayout();
 			// 
 			// DocContent
 			// 
@@ -53,6 +52,6 @@
 
 		#endregion
 
-		private RichTextBox DocContent;
+		public RichTextBox DocContent;
 	}
 }

@@ -83,6 +83,8 @@
 			BtnDireita = new ToolStripButton();
 			Dicas = new ToolTip(components);
 			timerControles = new System.Windows.Forms.Timer(components);
+			MenuRecentes = new ToolStripMenuItem();
+			fecharTodosOsDocumentosToolStripMenuItem = new ToolStripMenuItem();
 			menuStrip1.SuspendLayout();
 			statusStrip1.SuspendLayout();
 			toolStrip1.SuspendLayout();
@@ -100,14 +102,14 @@
 			// arquivoToolStripMenuItem
 			// 
 			resources.ApplyResources(arquivoToolStripMenuItem, "arquivoToolStripMenuItem");
-			arquivoToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { novoToolStripMenuItem, abrirToolStripMenuItem, salvarToolStripMenuItem, salvarComoToolStripMenuItem, toolStripMenuItem1, imprimirToolStripMenuItem, toolStripMenuItem2, encerrarToolStripMenuItem });
+			arquivoToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { novoToolStripMenuItem, abrirToolStripMenuItem, salvarToolStripMenuItem, salvarComoToolStripMenuItem, toolStripMenuItem1, imprimirToolStripMenuItem, toolStripMenuItem2, encerrarToolStripMenuItem, MenuRecentes });
 			arquivoToolStripMenuItem.Name = "arquivoToolStripMenuItem";
 			// 
 			// novoToolStripMenuItem
 			// 
 			resources.ApplyResources(novoToolStripMenuItem, "novoToolStripMenuItem");
 			novoToolStripMenuItem.Name = "novoToolStripMenuItem";
-			novoToolStripMenuItem.Click += novoToolStripMenuItem_Click;
+			novoToolStripMenuItem.Click += NovoToolStripMenuItem_Click;
 			// 
 			// abrirToolStripMenuItem
 			// 
@@ -204,6 +206,7 @@
 			// Documentos
 			// 
 			resources.ApplyResources(Documentos, "Documentos");
+			Documentos.DropDownItems.AddRange(new ToolStripItem[] { fecharTodosOsDocumentosToolStripMenuItem });
 			Documentos.Name = "Documentos";
 			// 
 			// cxPesquisa
@@ -228,7 +231,7 @@
 			// 
 			resources.ApplyResources(menuSobre, "menuSobre");
 			menuSobre.Name = "menuSobre";
-			menuSobre.Click += menuSobre_Click;
+			menuSobre.Click += MenuSobre_Click;
 			// 
 			// statusStrip1
 			// 
@@ -409,7 +412,17 @@
 			// 
 			timerControles.Enabled = true;
 			timerControles.Interval = 1;
-			timerControles.Tick += timerControles_Tick;
+			timerControles.Tick += TimerControles_Tick;
+			// 
+			// MenuRecentes
+			// 
+			resources.ApplyResources(MenuRecentes, "MenuRecentes");
+			MenuRecentes.Name = "MenuRecentes";
+			// 
+			// fecharTodosOsDocumentosToolStripMenuItem
+			// 
+			resources.ApplyResources(fecharTodosOsDocumentosToolStripMenuItem, "fecharTodosOsDocumentosToolStripMenuItem");
+			fecharTodosOsDocumentosToolStripMenuItem.Name = "fecharTodosOsDocumentosToolStripMenuItem";
 			// 
 			// frmMain
 			// 
@@ -487,5 +500,7 @@
 		private ToolTip Dicas;
 		private System.Windows.Forms.Timer timerControles;
 		private ToolStripMenuItem Documentos;
+		private ToolStripMenuItem MenuRecentes;
+		private ToolStripMenuItem fecharTodosOsDocumentosToolStripMenuItem;
 	}
 }
