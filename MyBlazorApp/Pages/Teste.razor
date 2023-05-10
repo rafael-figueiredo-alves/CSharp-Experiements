@@ -1,0 +1,22 @@
+﻿@page "/teste"
+@inherits TesteBase
+
+<h1>Olá, Blazor, tudo bem?</h1>
+
+@if (Exibir)
+{
+	<p>Você clicou no botão, né?</p>
+}
+
+<input type="text" @bind=@Texto />
+
+<h3>@Texto</h3>
+
+<button @onclick="@Clicou" class="btn btn-primary">Não clique aqui!</button>
+
+<hr />
+
+@for(int i = 1; i <= 10; i++)
+{
+	<p>Teste de loop - @i</p>
+}
