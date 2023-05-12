@@ -1,7 +1,8 @@
 ﻿@page "/teste"
+@page "/teste/{id:int}"
 @inherits TesteBase
 
-<h1>Olá, Blazor, tudo bem?</h1>
+<h1>Olá, Blazor, tudo bem? - @Id</h1>
 
 @if (Exibir)
 {
@@ -13,6 +14,10 @@
 <h3>@Texto</h3>
 
 <button @onclick="@Clicou" class="btn btn-primary">Não clique aqui!</button>
+<button @onclick="@Atualizar" class="btn btn-info">Atualizar!</button>
+<button @onclick="@Gravar" class="btn btn-success">Grava no LocalStorage</button>
+<button @onclick="@Ler" class="btn btn-outline-warning">Lê do LocalStorage</button>
+<button @onclick="@Remover" class="btn btn-danger">Apaga do LocalStorage</button>
 
 <hr />
 
