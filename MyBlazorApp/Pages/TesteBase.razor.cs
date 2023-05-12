@@ -9,7 +9,7 @@ namespace MyBlazorApp.Pages
         protected string Texto = string.Empty;
 
         [Inject]
-        public IJSRuntime Js { get; set; }
+        public IJSRuntime? Js { get; set; }
 
         [Parameter]
         public int Id { get; set; }
@@ -18,10 +18,9 @@ namespace MyBlazorApp.Pages
             Exibir = !Exibir;
         }
 
-		protected override async void OnAfterRender(bool firstRender)
+		protected override void OnAfterRender(bool firstRender)
 		{
 			base.OnAfterRender(firstRender);
-			//await Js.InvokeVoidAsync("window.alert", "Esta mensagem foi definida no C# !");
 		}
 
         protected void Atualizar()
@@ -29,20 +28,20 @@ namespace MyBlazorApp.Pages
             StateHasChanged();
         }
 
-        private string Chave = "MeuApp";
+        private readonly string Chave = "MeuApp";
         protected async Task Gravar()
         {
-            await Js.InvokeVoidAsync("window.localStorage.setItem", Chave, Texto);
+            await Js!.InvokeVoidAsync("window.localStorage.setItem", Chave, Texto);
         }
 
         protected async Task Ler()
         {
-            await Js.InvokeVoidAsync("alert", await Js.InvokeAsync<string>("window.localStorage.getItem", Chave));
+            await Js!.InvokeVoidAsync("alert", await Js!.InvokeAsync<string>("window.localStorage.getItem", Chave));
         }
 
         protected async void Remover()
         {
-			await Js.InvokeVoidAsync("window.localStorage.removeItem", Chave);
+			await Js!.InvokeVoidAsync("window.localStorage.removeItem", Chave);
 		}
      }
 }
