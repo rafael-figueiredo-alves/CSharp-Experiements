@@ -1,7 +1,9 @@
 ﻿@page "/teste"
 @page "/teste/{id:int}"
+@inject IAluno MeuAluno
 @inherits TesteBase
 
+<div style="overflow-y: auto">
 <h1>Olá, Blazor, tudo bem? - @Id</h1>
 
 @if (Exibir)
@@ -9,9 +11,11 @@
 	<p>Você clicou no botão, né?</p>
 }
 
-<input type="text" @bind=@Texto />
+<input type="text" @bind-value=@Texto />
 
 <h3>@Texto</h3>
+
+<h1>@MeuAluno.Mensagem()</h1>
 
 <button @onclick="@Clicou" class="btn btn-primary">Não clique aqui!</button>
 <button @onclick="@Atualizar" class="btn btn-info">Atualizar!</button>
@@ -25,3 +29,5 @@
 {
 	<p>Teste de loop - @i</p>
 }
+
+</div>
