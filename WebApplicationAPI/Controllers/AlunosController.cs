@@ -1,29 +1,51 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using WebApplicationAPI.Models;
+using WebApplicationAPI.Services;
 
 namespace WebApplicationAPI.Controllers
 {
+	public class Erro
+	{
+		public string? Mensagem { get; set; }
+	}
 	[Route("v1/api/[controller]")]
 	[ApiController]
 	public class AlunosController : ControllerBase
 	{
-		[HttpGet]
-		public ActionResult<Aluno> GetAluno()
+		private IAlunos alunosManager = new Alunos();
+
+		[HttpGet("{id}")]
+		public ActionResult<Aluno> GetAluno(int id)
 		{
-			return new Aluno() { Id = 1, Nome = "Rafaela" };
-		}
+			Aluno? aluno;
+
+            try
+			{
+				aluno = alunosManager!.GetAluno(id);
+            }
+			catch (Exception ex)
+			{
+                var erro = new Erro()
+                {
+                    Mensagem = "Id inválido"
+                };
+                return BadRequest(erro);
+            }
+            if (aluno != null)
+            {
+                return Ok(aluno);
+            }
+			else
+			{
+				return BadRequest(new Erro() { Mensagem = "Id inválido 2" });
+			}
+        }
 
 		[HttpGet("lista")]
 		public ActionResult<List<Aluno>> GetAlunos()
 		{
-			List<Aluno> Lista = new()
-			{
-				new Aluno() { Id = 1, Nome = "Davi Alves" },
-				new Aluno() { Id = 2, Nome = "Rafaela" },
-				new Aluno() { Id = 3, Nome = "Jailza" }
-			};
-			return Lista;
+			return alunosManager!.GetAlunos();
 		}
 	}
 }

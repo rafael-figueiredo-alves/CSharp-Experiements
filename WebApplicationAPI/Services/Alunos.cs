@@ -10,9 +10,10 @@ namespace WebApplicationAPI.Services
         {
             alunos = new List<Aluno>()
             {
-                new Aluno() { Id = 1, Nome = "Davi Alves" },
-                new Aluno() { Id = 2, Nome = "Rafaela Alves" },
-                new Aluno() { Id = 3, Nome = "Jailza Rocha Alves" }
+                new Aluno() { Id = 1, Nome = "Davi Alves", Idade = 11, Ativo = true },
+                new Aluno() { Id = 2, Nome = "Rafaela Alves", Idade = 14, Ativo = true },
+                new Aluno() { Id = 3, Nome = "Jailza Rocha Alves", Idade = 45, Ativo = true },
+                new Aluno() { Id = 4, Nome = "Rafael Alves", Idade = 38}
             };
         }
         public void AddAluno(Aluno aluno)
